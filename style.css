@@ -55,7 +55,7 @@ html, body {
 }
 
 input {
-    border-radius: 10%; 
+    margin: 2px; 
     padding: 10px 20px;
     border: 1px solid #00415a; 
 }
@@ -64,8 +64,8 @@ input {
     background-color: white;
     color: #607c3c;
     font-weight: bold;
-    padding: 10px 20px; 
-    font-size: 14px; 
+    padding: 8px 15px; 
+    font-size: 17px; 
 
 }
 
