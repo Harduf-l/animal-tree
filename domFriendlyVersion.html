@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="domStyle.css">
+    <title>Animal Tree</title>
+</head>
+
+<body id="body">
+
+
+    <header id="header">
+            
+    </header>
+
+    <div id="buttons"> 
+        <button type="button" id="newAnimalBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+            click me to add a new animal of your choice
+            </button>
+    
+        <button type="button" id="newAnimalWeightBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            click me to sort animals by weight
+            </button>
+
+        <button type="button" id="addRandomAnimal" class="btn btn-primary">
+                Add random animal
+      </button>
+
+    </div>
+        
+<!-- Modal -->
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add animal</h5>
+          <button type="button" id="closeButtonForm" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="formModalContent">
+            <form id="my_form">
+                <input placeholder="animal name"  type="text" name="" id="myname">
+                <input  placeholder="weight" type="text" name="" id="weight">
+                <br>
+                <input placeholder="color" type="text" name="" id="color">
+                <input placeholder="Number of legs" type="text" name="" id="legs">
+                <input placeholder="am i dangerous?" type="text" name="" id="reptilesQuestion">
+                <input placeholder="fur type" type="text" name="" id="mammalsQuestion">
+                <input placeholder="fly speed" type="text" name="" id="birdsQuestion">
+                <input placeholder="enter a URL picture" type="text" name="" id="picture">
+                <br> 
+                <br>
+                <input type="radio" id="mammalsRadio" name="animalFamily">
+                <label>Mammals</label>
+                <input type="radio" id="birdsRadio" name="animalFamily">
+                <label>Birds</label>
+                <input type="radio" id="reptilesRadio" name="animalFamily">  
+                <label>Reptiles</label>
+                <br>
+                <br>
+                <button id="my_btn" id="addAnimalButton" data-bs-dismiss="modal">add my animal</button>
+            </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="closeButton2Form" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class='col' id="div1"></div>
+            <div class='col' id="div2"></div>
+            <div class='col' id="div3"></div>
+        </div>
+    </div>
+    
+    
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Animals weight</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="MyModalContent">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/domScript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+
+</html>
