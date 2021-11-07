@@ -29,6 +29,7 @@ html, body {
 #buttons {
     text-align: center; 
     margin-bottom: 30px; 
+    width: 100%; 
 }
 
 #newAnimalWeightBtn {
