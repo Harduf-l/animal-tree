@@ -6,6 +6,8 @@ body = document.getElementById("body");
 var headerTree = document.createElement("h1"); 
 headerTree.id = "headingtreeText";
 headerTree.innerText = "My animal tree";
+headerTree.className = "col-sm-10 col-md-8 col-lg-5 mt-3";
+
 document.getElementById("header").appendChild(headerTree); 
 
 var modalText = document.getElementById("MyModalContent"); 
@@ -243,7 +245,7 @@ function Animal(foodId = "", name, weight, color, legs, picture, audio) {
       var animalImage = document.createElement("IMG");
       animalImage.src = typeOfAnimal[i].picture; 
       animalImage.id = typeOfAnimal[i].name; 
-      animalImage.className = "animalpictures";
+      animalImage.className = "col-lg-6 col-md-12 animalpictures";
       miniDiv.appendChild(animalImage);
       var pEl=document.createElement("p");
       pEl.innerText= typeOfAnimal[i].toString();
@@ -251,9 +253,9 @@ function Animal(foodId = "", name, weight, color, legs, picture, audio) {
       miniDiv.appendChild(pEl);
       var whatIeat = document.createElement("p");
       whatIeat.setAttribute("id", typeOfAnimal[i].foodId);
-      whatIeat.setAttribute("class", "foodsanimalsEat");
+      whatIeat.setAttribute("class", "foodsanimalsEat mb-sm-4");
       whatIeat.innerText = "discover what i eat";
-      miniDiv.appendChild(whatIeat); 
+      pEl.appendChild(whatIeat); 
      placeToappend.appendChild(miniDiv); 
      
      addSoundtoDom(animalImage.id, typeOfAnimal[i]); 
@@ -341,6 +343,7 @@ function addmoreAnimal(animalArrayExtra, placeToPlace) {
   var animalImage = document.createElement("IMG");
   animalImage.setAttribute("src", animalArrayExtra[random].picture); 
   animalImage.setAttribute("id", animalArrayExtra[random].name); 
+  animalImage.className = "animalpictures" 
   placeToappend.appendChild(animalImage);
   var pEl=document.createElement("p");
   pEl.innerText= animalArrayExtra[random].toString();
@@ -350,7 +353,7 @@ function addmoreAnimal(animalArrayExtra, placeToPlace) {
   whatIeat.setAttribute("id", animalArrayExtra[random].foodId)
   whatIeat.setAttribute("class", "foodsanimalsEat")
   whatIeat.innerText = "discover what i eat"
-  placeToappend.appendChild(whatIeat)
+  pEl.appendChild(whatIeat)
 
   // console.log(animalArrayExtra[random].audio)
   addSoundtoDom(animalImage.id, animalArrayExtra[random]); 
