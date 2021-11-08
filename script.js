@@ -107,19 +107,24 @@ myform.onsubmit = function (event){
   allAnimalsOnPage.push(userAnimal); 
 
   function newUserAnimal(div) {
+
     placeToappend = document.getElementById(div); 
+    var miniDiv  = document.createElement("DIV");
     var animalImage = document.createElement("IMG");
-    animalImage.setAttribute("src", userAnimal.picture); 
-    animalImage.setAttribute("id", userAnimal.name); 
-    placeToappend.appendChild(animalImage);
+    animalImage.src = userAnimal.picture; 
+    animalImage.id = userAnimal.name; 
+    animalImage.className = "col-lg-6 col-md-12 animalpictures";
+    miniDiv.appendChild(animalImage);
     var pEl=document.createElement("p");
     pEl.innerText= userAnimal.toString();
     pEl.className="animal-text";
-    placeToappend.appendChild(pEl);
+    miniDiv.appendChild(pEl);
     var whatIeat = document.createElement("p");
-    whatIeat.setAttribute("class", "foodsanimalsEat")
-    whatIeat.innerText = "discover what i eat"
-    placeToappend.appendChild(whatIeat)
+    whatIeat.setAttribute("class", "foodsanimalsEat mb-sm-4");
+    whatIeat.innerText = "discover what i eat";
+    pEl.appendChild(whatIeat); 
+   placeToappend.appendChild(miniDiv); 
+
   
   }
 }
