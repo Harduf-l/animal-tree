@@ -121,6 +121,17 @@ left: 10px;
     border-radius: 20px; 
     cursor: pointer; 
     margin-top: 20px; 
+    width: 160px; 
+}
+
+.eatOn {
+    background-color: #555555; 
+    color: white;
+    padding: 5px; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    width: 160px; 
 }
 
 .headingstyle {

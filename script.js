@@ -117,10 +117,10 @@ myform.onsubmit = function (event){
     pEl.innerText= userAnimal.toString();
     pEl.className="animal-text";
     miniDiv.appendChild(pEl);
-    var whatIeat = document.createElement("p");
-    whatIeat.setAttribute("class", "foodsanimalsEat mb-sm-4 ps-2 pe-2");
-    whatIeat.innerText = "Discover what i eat";
-    pEl.appendChild(whatIeat); 
+    // var whatIeat = document.createElement("p");
+    // whatIeat.setAttribute("class", "foodsanimalsEat mb-sm-4 ps-2 pe-2");
+    // whatIeat.innerText = "Discover what i eat";
+    // pEl.appendChild(whatIeat); 
    placeToappend.appendChild(miniDiv); 
 
   
@@ -237,19 +237,39 @@ function Animal(foodId = "", name, weight, color, legs, picture, audio) {
       pEl.className="animal-text";
       miniDiv.appendChild(pEl);
       var whatIeat = document.createElement("p");
-      whatIeat.setAttribute("id", typeOfAnimal[i].foodId);
+      whatIeat.id =  typeOfAnimal[i].foodId
       whatIeat.setAttribute("class", "foodsanimalsEat mb-sm-4 ps-2 pe-2");
       whatIeat.innerText = "Discover what i eat";
       pEl.appendChild(whatIeat); 
+    
 
 
      placeToappend.appendChild(miniDiv); 
      
-     addSoundtoDom(animalImage.id, typeOfAnimal[i]); 
+    eatFunction(whatIeat.id, typeOfAnimal[i] )
+    addSoundtoDom(animalImage.id, typeOfAnimal[i]); 
      
   }
+}
+
+
+function eatFunction(id, animalObject) {
+
+  document.getElementById(id).addEventListener("click", ()=>{
+    let foodButton = document.getElementById(id)
+    if (foodButton.innerText === "Discover what i eat") {
+      foodButton.innerText = animalObject.foodId
+      foodButton.setAttribute("class", "eatOn mb-sm-4 ps-2 pe-2");
+    } else {
+      foodButton.innerText = "Discover what i eat"
+      foodButton.setAttribute("class", "foodsanimalsEat mb-sm-4 ps-2 pe-2");
+    }
+    
+    
+  }); 
 
 }
+
 
 weightButton.addEventListener("click", sidurFunction);
 
@@ -282,7 +302,6 @@ function sidurFunction() {
 }
 
 /////// animal sounds /////////
-
 
 function addSoundtoDom(id, animalObject) {
   document.getElementById(id).addEventListener("click", play.bind(animalObject) ); 
@@ -340,41 +359,20 @@ function addmoreAnimal(animalArrayExtra, placeToPlace) {
   pEl.className="animal-text";
   miniDiv.appendChild(pEl);
   var whatIeat = document.createElement("p");
-  whatIeat.setAttribute("id", animalArrayExtra[random].foodId)
+  whatIeat.id =  animalArrayExtra[random].foodId
   whatIeat.setAttribute("class", "foodsanimalsEat mb-sm-4 ps-2 pe-2")
   whatIeat.innerText = "Discover what i eat"
   pEl.appendChild(whatIeat)
 
   // console.log(animalArrayExtra[random].audio)
+  eatFunction(whatIeat.id, animalArrayExtra[random] )
   addSoundtoDom(animalImage.id, animalArrayExtra[random]); 
-
   animalArrayExtra.splice(random, 1); 
-
+  
 }
 
 
 
-
-
-document.getElementById("lionfood").addEventListener("click", function() {
-  whoIeat("snake", "lizard");
-});
-
-document.getElementById("owlfood").addEventListener("click", function() {
-  whoIeat("snake", "panda");
-});
-
-document.getElementById("eaglefood").addEventListener("click", function() {
-  whoIeat("wolf", "lion");
-});
-
-document.getElementById("snakefood").addEventListener("click", function() {
-  whoIeat("lion", "lizard");
-});
-
-document.getElementById("lizardfood").addEventListener("click", function() {
-  whoIeat("owl", "eagle");
-});
 
 ////
 
@@ -400,22 +398,6 @@ function foodpanda() {
 
 /////
 
-
-var does = true;
-
-function whoIeat(animal1, animal2 = "") {
-
-  if (does) {
-    document.getElementById(animal1).style.cssText = "border: 8px red solid;"
-    document.getElementById(animal2).style.cssText = "border: 8px red solid;"
-  }
-  else {
-    document.getElementById(animal1).style.cssText = "border: 0px black solid;"
-    document.getElementById(animal2).style.cssText = "border: 0px black solid;"
-  }
-  does = !does 
-
-}
 
 /////
 
