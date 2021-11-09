@@ -3,12 +3,7 @@ var arrayWeight = [];
 var myform = document.getElementById("my_form"); 
 body = document.getElementById("body"); 
 
-var headerTree = document.createElement("h1"); 
-headerTree.id = "headingtreeText";
-headerTree.innerText = "My animal tree";
-headerTree.className = "col-sm-10 col-md-8 col-lg-5 mt-3";
 
-document.getElementById("header").appendChild(headerTree); 
 
 var modalText = document.getElementById("MyModalContent"); 
 var weightButton = document.getElementById("newAnimalWeightBtn"); 
@@ -108,46 +103,29 @@ myform.onsubmit = function (event){
 
   function newUserAnimal(div) {
 
+
     placeToappend = document.getElementById(div); 
     var miniDiv  = document.createElement("DIV");
+    miniDiv.className = "d-flex flex-wrap p-3 justify-content-center"
+
     var animalImage = document.createElement("IMG");
     animalImage.src = userAnimal.picture; 
     animalImage.id = userAnimal.name; 
-    animalImage.className = "col-lg-6 col-md-12 animalpictures";
+    animalImage.className = "animalpictures";
     miniDiv.appendChild(animalImage);
     var pEl=document.createElement("p");
     pEl.innerText= userAnimal.toString();
     pEl.className="animal-text";
     miniDiv.appendChild(pEl);
     var whatIeat = document.createElement("p");
-    whatIeat.setAttribute("class", "foodsanimalsEat mb-sm-4");
-    whatIeat.innerText = "discover what i eat";
+    whatIeat.setAttribute("class", "foodsanimalsEat mb-sm-4 ps-2 pe-2");
+    whatIeat.innerText = "Discover what i eat";
     pEl.appendChild(whatIeat); 
    placeToappend.appendChild(miniDiv); 
 
   
   }
 }
-
-
-
-
-
-var mammalsHeader = document.createElement("h1"); 
-mammalsHeader.innerText = "mammals"
-mammalsHeader.setAttribute("class","headingstyle")
-document.getElementById("div1").appendChild(mammalsHeader); 
-
-var reptilesHeader = document.createElement("h1"); 
-reptilesHeader.innerText = "birds"
-reptilesHeader.setAttribute("class","headingstyle")
-document.getElementById("div2").appendChild(reptilesHeader); 
-
-var birdsHeader = document.createElement("h1"); 
-birdsHeader.innerText = "reptiles"
-birdsHeader.setAttribute("class","headingstyle")
-document.getElementById("div3").appendChild(birdsHeader); 
-
 
 
 function Animal(foodId = "", name, weight, color, legs, picture, audio) {
@@ -192,31 +170,31 @@ function Animal(foodId = "", name, weight, color, legs, picture, audio) {
 
 
   var differentMammalsArray = [new Mammale("lionfood", "lion", 160, "orange", 4, "images/lion2.jpg", "golden", "./sounds/lion.mp3"),
-  new Mammale("pandafood", "panda", 70, "black&white", 4, "images/panda2.jpg", "soft", "./sounds/bear.mp3") ]                 
+  new Mammale("pandafood", "panda", 70, "black&white", 4, "images/panda2.jpg", "soft", "./sounds/bear.mp3"),
+  new Mammale("tigerfood", "tiger", 150, "black and oragne", 4, "images/tiger.jpg", "rough", "./sounds/tiger.mp3") ]                 
 
   var differentBirdsArray = [new Bird ("owlfood", "owl", 1.5, "brown-grey", 2, "images/owl2.jpg", "20 kph", "./sounds/owlsound.mp3"),
-  new Bird ("eaglefood", "eagle", 8, "grey", 2, "images/nesher2.jpg", "50 kph", "./sounds/nesher.mp3") ]
+  new Bird ("eaglefood", "eagle", 8, "grey", 2, "images/nesher2.jpg", "50 kph", "./sounds/nesher.mp3"),
+  new Bird ("colorfulfood", "colorful bird", 0.2, "yellow", 2, "images/bird.jpg", "10 kph", "./sounds/bird.mp3") ]
 
   var differentReptilesArray = [new Reptile("snakefood", "snake", 4, "brown", 0, "images/snake.jpg", "yes", "./sounds/snakesound.mp3"),
-  new Reptile("lizardfood", "lizard", 0.5, "green", 4, "images/lizard2.jpg", "no", "./sounds/lizardsound.mp3",) ]
+  new Reptile("lizardfood", "lizard", 0.5, "green", 4, "images/lizard2.jpg", "no", "./sounds/lizardsound.mp3",),
+  new Reptile("spacielfood", "special snake", 0.9, "green", 0, "images/snake2.jpg", "yes", "./sounds/snakesound.mp3") ]
 
   var allAnimalsOnPage = differentMammalsArray.concat(differentBirdsArray).concat(differentReptilesArray);
 
   var moreMammalsArray = [
-  new Mammale("tigerfood", "tiger", 150, "black and oragne", 4, "images/tiger.jpg", "rough", "./sounds/tiger.mp3"), 
   new Mammale("humanfood", "human", 70, "skin color", 2, "images/person.jpg", "none", "./sounds/human.mp3"), 
   new Mammale("wolfood", "wolf", 150, "white and grey", 4, "images/wolg.jpg", "cold", "./sounds/wolf.mp3"), 
   new Mammale("dogfood", "dog", 30, "light golden", 4, "./images/dog.jpg", "sweet", "./sounds/dog.mp3") ]; 
 
   var moreBirdsArray = [
-    new Bird ("colorfulfood", "colorful bird", 0.2, "yellow", 2, "images/bird.jpg", "10 kph", "./sounds/bird.mp3"),
     new Bird ("orangefood", "orange bird", 0.3, "grey", 2, "images/bird2.jpg", "8 kph", "./sounds/bird.mp3"),
     new Bird ("strongfood", "strong eagle", 8, "black and white", 2, "images/bird3.jpg", "110 kph", "./sounds/nesher.mp3"),
     new Bird ("nicefood", "nice bird", 4, "grey", 2, "images/bird4.jpg", "50 kph", "./sounds/bird.mp3")
   ]
 
   var moreReptilesArray = [
-    new Reptile("spacielfood", "special snake", 0.9, "green", 0, "images/snake2.jpg", "yes", "./sounds/snakesound.mp3"),
     new Reptile("awsomefood", "awsome snake", 1.5, "exotic", 0, "images/snake3.jpg", "yes", "./sounds/snakesound.mp3"),
     new Reptile("weirdfood", "weird lizard", 2.3, "green spots", 4, "images/lizard.jpg", "no", "./sounds/lizardsound.mp3"),
     new Reptile("exoticfood", "exotic lizard", 1.5, "grey and green", 4, "images/lizard3.jpg", "no", "./sounds/lizardsound.mp3"),
@@ -247,10 +225,12 @@ function Animal(foodId = "", name, weight, color, legs, picture, audio) {
        
       for (var i=0; i< typeOfAnimal.length; i++) {
       var miniDiv  = document.createElement("DIV");
+      miniDiv.className = "d-flex flex-wrap p-3 justify-content-center"
+
       var animalImage = document.createElement("IMG");
       animalImage.src = typeOfAnimal[i].picture; 
       animalImage.id = typeOfAnimal[i].name; 
-      animalImage.className = "col-lg-6 col-md-12 animalpictures";
+      animalImage.className = "animalpictures";
       miniDiv.appendChild(animalImage);
       var pEl=document.createElement("p");
       pEl.innerText= typeOfAnimal[i].toString();
@@ -258,9 +238,11 @@ function Animal(foodId = "", name, weight, color, legs, picture, audio) {
       miniDiv.appendChild(pEl);
       var whatIeat = document.createElement("p");
       whatIeat.setAttribute("id", typeOfAnimal[i].foodId);
-      whatIeat.setAttribute("class", "foodsanimalsEat mb-sm-4");
-      whatIeat.innerText = "discover what i eat";
+      whatIeat.setAttribute("class", "foodsanimalsEat mb-sm-4 ps-2 pe-2");
+      whatIeat.innerText = "Discover what i eat";
       pEl.appendChild(whatIeat); 
+
+
      placeToappend.appendChild(miniDiv); 
      
      addSoundtoDom(animalImage.id, typeOfAnimal[i]); 
@@ -337,7 +319,6 @@ if (random ==3) {
 
 function addmoreAnimal(animalArrayExtra, placeToPlace) {
   
-
   var placeToappend = document.getElementById(placeToPlace)
 
   var random = Math.floor(Math.random() * animalArrayExtra.length); 
@@ -345,19 +326,23 @@ function addmoreAnimal(animalArrayExtra, placeToPlace) {
 
   allAnimalsOnPage.push(animalArrayExtra[random]); 
 
+    var miniDiv  = document.createElement("DIV");
+    miniDiv.className = "d-flex flex-wrap p-3 justify-content-center"
+    
+  placeToappend.appendChild(miniDiv)
   var animalImage = document.createElement("IMG");
   animalImage.setAttribute("src", animalArrayExtra[random].picture); 
   animalImage.setAttribute("id", animalArrayExtra[random].name); 
   animalImage.className = "animalpictures" 
-  placeToappend.appendChild(animalImage);
+  miniDiv.appendChild(animalImage);
   var pEl=document.createElement("p");
   pEl.innerText= animalArrayExtra[random].toString();
   pEl.className="animal-text";
-  placeToappend.appendChild(pEl);
+  miniDiv.appendChild(pEl);
   var whatIeat = document.createElement("p");
   whatIeat.setAttribute("id", animalArrayExtra[random].foodId)
-  whatIeat.setAttribute("class", "foodsanimalsEat")
-  whatIeat.innerText = "discover what i eat"
+  whatIeat.setAttribute("class", "foodsanimalsEat mb-sm-4 ps-2 pe-2")
+  whatIeat.innerText = "Discover what i eat"
   pEl.appendChild(whatIeat)
 
   // console.log(animalArrayExtra[random].audio)
@@ -404,7 +389,7 @@ function foodpanda() {
     pandafood.innerText = "i am vegan"; 
     pandafood.style.backgroundColor = "green"
   } else {
-    pandafood.innerText = "discover what i eat"; 
+    pandafood.innerText = "Discover what i eat"; 
     pandafood.style.backgroundColor = "#6f0000"
   }
   
