@@ -136,6 +136,12 @@ function Animal(foodId = "", name, weight, color, legs, picture, audio) {
     this.legs = legs;
     this.picture = picture; 
     this.audio = audio; 
+
+    this.callme = function(){
+      console.log(this.name)
+    }
+      
+    
   }
   
   Animal.prototype.toString = function () {
@@ -242,8 +248,6 @@ function Animal(foodId = "", name, weight, color, legs, picture, audio) {
       whatIeat.innerText = "Discover what i eat";
       pEl.appendChild(whatIeat); 
     
-
-
      placeToappend.appendChild(miniDiv); 
      
     eatFunction(whatIeat.id, typeOfAnimal[i] )
@@ -251,6 +255,7 @@ function Animal(foodId = "", name, weight, color, legs, picture, audio) {
      
   }
 }
+
 
 
 function eatFunction(id, animalObject) {
